@@ -1,0 +1,21 @@
+==========================================JAK DZIAŁA KOD==========================================
+
+- Daje się zdjęcie na którym jest pieprzyk i algorytm sam oznacza go jako komórki rakowe o wartości 1.
+
+==========================================DZIAŁANIE MECHANIZMU ZARAŻANIA==========================================
+
+- Po rozpoczęciu symulacji dla każdej sąsiedniej komórki która jest zdrowa obliczany jest próg zarażenia:
+            próg_zarażenia = spread_rate * (liczba_sasiadów_rakowych /8)
+
+(spread_rate jest ustawiany suwakiem w oknie po uruchomieniu)
+
+następnie losowana jest liczba z przedziału od 0 do 1 i jeśli będzie ona mniejsza niż próg_zarażenia
+to komórka staje się komórką rakową.
+
+
+==========================================KLUCZOWE CECHY ALGORYTMU==========================================
+
+- im więcej sąsiadów rakowych tym większe prawdopodobieństwo zarażenia
+- wyższy spread_rate = szybsze rozprzestrzenianie się
+- element losowości czyli symulacja nie jest deterministyczna
+- wykładniczy wzrost rozrostu

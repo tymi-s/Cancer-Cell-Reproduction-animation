@@ -31,7 +31,7 @@ class CancerCellSimulator(QMainWindow):
         main_layout = QVBoxLayout(central_widget)
 
         title = QLabel("Symulator Rozprzestrzeniania Komórek Rakowych")
-        title.setStyleSheet("font-size: 20px; font-weight: bold; padding: 10px;")
+        title.setStyleSheet("font-size: 20px; font-weight: bold; padding: 10px; color: black;")  # DODANO color: black;
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         main_layout.addWidget(title)
 
@@ -53,6 +53,7 @@ class CancerCellSimulator(QMainWindow):
 
         speed_layout = QHBoxLayout()
         speed_label = QLabel("Szybkość rozprzestrzeniania:")
+        speed_label.setStyleSheet("color: black;")  # DODANO
         speed_layout.addWidget(speed_label)
 
         self.speed_slider = QSlider(Qt.Orientation.Horizontal)
@@ -63,6 +64,7 @@ class CancerCellSimulator(QMainWindow):
         speed_layout.addWidget(self.speed_slider)
 
         self.speed_value_label = QLabel(f"{self.spread_rate:.1f}")
+        self.speed_value_label.setStyleSheet("color: black;")  # DODANO
         speed_layout.addWidget(self.speed_value_label)
 
         main_layout.addLayout(speed_layout)
@@ -70,15 +72,18 @@ class CancerCellSimulator(QMainWindow):
         stats_layout = QHBoxLayout()
 
         self.gen_label = QLabel("Generacja: 0")
-        self.gen_label.setStyleSheet("padding: 5px; background-color: #e0e0e0; border-radius: 5px;")
+        self.gen_label.setStyleSheet(
+            "padding: 5px; background-color: #e0e0e0; border-radius: 5px; color: black;")  # DODANO color: black;
         stats_layout.addWidget(self.gen_label)
 
         self.cancer_label = QLabel("Komórki rakowe: 0")
-        self.cancer_label.setStyleSheet("padding: 5px; background-color: #ffcccc; border-radius: 5px;")
+        self.cancer_label.setStyleSheet(
+            "padding: 5px; background-color: #ffcccc; border-radius: 5px; color: black;")  # DODANO color: black;
         stats_layout.addWidget(self.cancer_label)
 
         self.healthy_label = QLabel("Zdrowe tkanki: 100.0%")
-        self.healthy_label.setStyleSheet("padding: 5px; background-color: #ccffcc; border-radius: 5px;")
+        self.healthy_label.setStyleSheet(
+            "padding: 5px; background-color: #ccffcc; border-radius: 5px; color: black;")  # DODANO color: black;
         stats_layout.addWidget(self.healthy_label)
 
         main_layout.addLayout(stats_layout)
@@ -94,7 +99,8 @@ class CancerCellSimulator(QMainWindow):
             "2. Naciśnij Start, aby rozpocząć symulację rozprzestrzeniania\n"
             "3. Dostosuj szybkość rozprzestrzeniania suwakiem"
         )
-        info.setStyleSheet("padding: 10px; background-color: #e3f2fd; border-radius: 5px; font-size: 11px;")
+        info.setStyleSheet(
+            "padding: 10px; background-color: #e3f2fd; border-radius: 5px; font-size: 11px; color: black;")  # DODANO color: black;
         main_layout.addWidget(info)
 
         self.draw_canvas()
